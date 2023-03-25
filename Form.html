@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style> 
+    body { background-color: lightpink;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+    border-color: lightgray;
+    background-color: beige;
+}
+
+nav {
+    background-color: black;
+
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 23px 20px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #2c2828;
+  text-align: center;}
+
+#teaimg {  height: 50px; 
+    float: left;
+    position: relative;
+    top: -3px;}
+    </style>
+</head>
+<body>
+ <div><nav>
+    <ul>
+      <li><a href="index.html"><img id=teaimg src="Images/teaimage.png" alt="Home"></a></li>
+      <li><a href="About.html">About </a></li>
+      <li><a href="History.html">Facts</a></li>
+      <li><a href="More.html"> More </a></li>
+      <!---How to make the Dropdown for just More section, I want to add types of tea, tea benefits -->
+      <li><a href="ContactMe.html">Contact Information</a></li>
+      <li><a href="Form.html">Form</a></li>
+    </ul>
+  </nav> </div> 
+  
+    <div> 
+    <form method="post" action="//oim-apis.up.railway.app/form2" target="_blank">
+        <fieldset>
+          <legend> 
+            <strong> Your Information:</strong>
+          </legend>
+          <label for="name">Name:</label> 
+          <br>
+          <input type="text" id="name" name="name">
+          <br>
+          <label for="email"> Email:</label>
+           <br>
+          <input type="email" id="email" name="email">
+          <br> 
+          <label for="country"> Your Favorite Tea: </label> 
+          <br> 
+          <input list="Favorite Tea" id="Tea" name="Tea"/>
+           <datalist id="Favorite Tea">
+            <option value="Green Tea">
+            <option value="Chamomile Tea">
+            <option value="Oolong Tea">
+            <option value="Jasmine Tea">
+        </datalist>
+        </fieldset>
+      </form>
+      </div>
+      <fieldset>
+        <legend> 
+          <strong> Your Review:</strong>
+        </legend>
+        <label for="productselect">Which Tea do you love the most?</label><br>
+    <select name="product list" id="productselect">
+        <option value="1"> Black tea</option>
+        <option value="2"> Herbal tea</option>
+        <option value="3"> Green Tea</option>
+    </select>
+    <br>
+    <br> 
+        <label for="rating"> What do you think of tea bags? </label><br>
+    <input type="checkbox" id="rating1" name="rating" value="Great">
+        <label for="rating"> Great </label>
+        <input type="checkbox" id="rating2" name="rating" value="Awesome">
+        <label for="rating2"> Awesome </label>
+        <input type="checkbox" id="rating3" name="rating" value="Good"/>
+        <label for="rating3"> Good</label> 
+        <br>
+        <label for="comments"> Comments:</label>
+        <br> 
+        <textarea id="comments" name="comments" cols="30" rows="10"></textarea>
+        <br>
+        <input type="checkbox" id="signup" checked> "Sign me Up for any email updates"
+<br>
+<button type="submit">Submit</button>
+<button type="reset" >Reset</button>
+        
+      </option>
+      </fieldset>
+    </form>
+      <!--Used old class notes and exercises to get the structure-->
+</body>
+</html>
