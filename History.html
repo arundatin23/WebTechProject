@@ -3,13 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>History</title>
+  <link
+    rel="icon"
+    href="Images/teaimage.png" />
+  <link href="css/style.css" rel="stylesheet" />
   <style> 
+  
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(210, 242, 210);
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
     body,html{ 
      background: 100%;
      height: 1500px;
     }
    body 
-   { background: linear-gradient(to bottom, lightblue, lightgreen, rgb(246, 196, 246) );
+   { background: linear-gradient(to bottom, lightblue, rgb(144, 238, 214), rgb(188, 237, 188) );
     
  } 
 
@@ -36,41 +65,10 @@ h3{ text-align: left;}
   text-align: left;
 }
 
-nav {
-    background-color: black;
-
+h1,h2,p,table,li{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 23px 20px;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  background-color: #2c2828;
-  text-align: center;}
-
-#teaimg {  height: 50px; 
-    float: left;
-    position: relative;
-    top: -3px;}
   
-
-
  </style>
    <nav>
     <ul>
@@ -78,7 +76,6 @@ nav li a:hover {
       <li><a href="About.html">About </a></li>
       <li><a href="History.html">Facts</a></li>
       <li><a href="More.html"> More </a></li>
-      <!---How to make the Dropdown for just More section, I want to add types of tea, tea benefits -->
       <li><a href="ContactMe.html">Contact Information</a></li>
       <li><a href="Form.html">Form</a></li>
     </ul>
@@ -102,23 +99,38 @@ nav li a:hover {
         
         At T3, we're passionate about all things tea and are dedicated to sharing our knowledge and expertise with our readers. Whether you're interested in learning more about the history of tea, the health benefits of different types of tea, or simply want to explore new and exciting tea flavors, we've got you covered. So why not grab a cup of tea and join us on this journey of discovery?</p>
 
-    <h3>Types of Tea</h3>
-    
-    <p id="p1">Some of the most popular types of tea include:</p>
-    
-    <ul>
-      <li>Green Tea</li>
-      <li>Black Tea</li>
-      <li>Oolong Tea</li>
-      <li>White Tea</li>
-      <li>Herbal Tea</li>
-    </ul>
-    
-    <h3>Health Benefits of Tea</h3>
+        <table>
+          <tr>
+            <th>Type of Tea</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Green Tea</td>
+            <td>Tea made from unfermented tea leaves that has a light, refreshing taste and is high in antioxidants.</td>
+          </tr>
+          <tr>
+            <td>Black Tea</td>
+            <td>Tea made from fully fermented tea leaves that has a strong, bold flavor and contains caffeine.</td>
+          </tr>
+          <tr>
+            <td>Oolong Tea</td>
+            <td>Tea made from partially fermented tea leaves that has a unique, complex flavor and is often described as being somewhere between green and black tea.</td>
+          </tr>
+          <tr>
+            <td>White Tea</td>
+            <td>Tea made from the youngest leaves and buds of the tea plant that are picked before they fully open. White tea has a delicate, subtle flavor and is low in caffeine.</td>
+          </tr>
+          <tr>
+            <td>Herbal Tea</td>
+            <td>Tea made from herbs, fruits, flowers, and spices that does not contain any tea leaves. Herbal tea comes in a wide range of flavors and is often used for its supposed health benefits.</td>
+          </tr>
+        </table>
+        
+   
     
     <p id="p">Tea has many health benefits, including:</p>
     
-    <ul>
+    <ul id="p">
       <li>Reduced risk of heart disease</li>
       <li>Lowered blood pressure</li>
       <li>Improved brain function</li>
@@ -128,7 +140,7 @@ nav li a:hover {
   </main>
   <img id= "T" class="slide" src="Images/CT.jpg" alt="Chamomile Tea" title="Chamomile">
     <img id="T1" class="slide" src="Images/GT.jpg" alt="Green Tea" title="Green">
-    <img id="T2" class= "slide" src="Images/JT.jpg" alt="Jasmine Tea" title="Jasmine">
+    <img id="T2" class= "slide" src="Images/purpletea.jpg" alt="Jasmine Tea" title="Jasmine">
     <img id="T3" class="slide" src="Images/OT.jpg" alt="Oolong Tea" title="Oolong "> 
     <img id="T4" src="Images/history.jpg">
     <img src="Images/teahistory.jpg">

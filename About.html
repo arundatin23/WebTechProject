@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link
+    rel="icon"
+    href="Images/teaimage.png" />
+    <link href="css/style.css" rel="stylesheet" />
     <style> 
     
     body,html{ 
@@ -44,6 +48,13 @@ background-color: rgb(13, 13, 13);
 
 }
 
+.slide img {
+  width: 9.5cm;
+  height: 10.6cm;
+  margin: auto;
+  vertical-align: middle; 
+}
+
 .Pic {
 			display: flex;
 			flex-wrap: wrap;
@@ -51,43 +62,22 @@ background-color: rgb(13, 13, 13);
 		}
 
 		.Pic img {
-			height: 5.2cm;
+			height: 5cm;
 			margin-bottom: 1px;
-		}
-        nav {
-    background-color: black;
+		} 
+    #slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10cm;
 
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+#slides-container {
+  position: relative;
+  height: 10cm;
 }
-
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 23px 20px;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  background-color: #2c2828;
-  text-align: center;}
-
-#teaimg {  height: 50px; 
-    float: left;
-    position: relative;
-    top: -3px;}   
-
-    </style>
+</style>
 </head>
 <nav>
     <ul>
@@ -95,12 +85,87 @@ nav li a:hover {
       <li><a href="About.html">About </a></li>
       <li><a href="History.html">Facts</a></li>
       <li><a href="More.html"> More </a></li>
-      <!---How to make the Dropdown for just More section, I want to add types of tea, tea benefits -->
       <li><a href="ContactMe.html">Contact Information</a></li>
       <li><a href="Form.html">Form</a></li>
     </ul>
   </nav>
 <body>
+  <div id="slideshow">
+    <div id="slides-container"></div>
+    <div id="dots-container"></div>
+  </div>
+  <script>
+    const images = ["images/flowerimage2.png", "images/Spicedtea-18.jpg", "images/vegan-masala-chai-5.jpg", "images/pinktea.jpg", "images/purpletea.jpg"];
+
+let slideIndex = 0;
+
+function showSlide(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+  
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  // Remove active class from all dots
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Set current slide and dot to active
+  slides[n].style.display = "block";
+  dots[n].className += " active";
+  
+  slideIndex = n;
+}
+
+function nextSlide() {
+  slideIndex++;
+  if (slideIndex >= images.length) {
+    slideIndex = 0;
+  }
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = images.length - 1;
+  }
+  showSlide(slideIndex);
+}
+
+function initSlides() {
+  const slidesContainer = document.getElementById("slides-container");
+  
+  // Create slideshow HTML elements
+  const slidesHTML = images.map((image, index) => {
+    return `
+      <div class="slide fade">
+        <img src="${image}" alt="Slide ${index + 1}">
+      </div>
+    `;
+  });
+  
+  const dotsHTML = images.map((image, index) => {
+    return `
+      <span class="dot" onclick="showSlide(${index})"></span>
+    `;
+  });
+  
+  // Add slideshow elements to the DOM
+  slidesContainer.innerHTML = slidesHTML.join("");
+  document.getElementById("dots-container").innerHTML = dotsHTML.join("");
+  
+  // Show first slide and start slideshow
+  showSlide(0);
+  setInterval(nextSlide, 2000);
+}
+
+initSlides();
+
+  </script>
     <h1> About T<sup>3</sup></h1>
     <br> 
     <div> <img class=t3 src="Images/t3logo.jpg"> 
@@ -116,10 +181,11 @@ nav li a:hover {
 <br> 
 <div class="Pic">
     <img src="Images/tea.jpg" alt="Image 1" title="tea">
-    <img src="Images/CT.jpg" alt="Image 2" title="Chamomile">
+    <img src="Images/cinnamon.jpg" alt="Image 2" title="Chamomile">
     <img src="Images/GT.jpg" alt="Image 3" title="Green Tea">
-    <img src="Images/JT.jpg" alt="Image 4" title="Jasmine Tea">
+    <img src="Images/flowerimage2.png" alt="Image 4" title="Jasmine Tea">
     <img src="Images/OT.jpg" alt=" Image 5" title="Oolong Tea"> 
+    <img src="Images/prettypink.jpg" alt="Image 6" title="Pink Tea">
 </div>
 <br> 
          </p>

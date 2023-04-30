@@ -8,6 +8,7 @@
     <link
     rel="icon"
     href="Images/teaimage.png" />
+    <link href="css/style.css" rel="stylesheet" />
    <style> 
    body,html{ 
     background: 100%;
@@ -18,34 +19,7 @@
    
 } 
    
- nav {
-    background-color: black;
 
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 23px 20px;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  background-color: #2c2828;
-  text-align: center;
-}
 
 .teaimg, img { 
     height: 50px; 
@@ -135,17 +109,27 @@ h1{
    <h1> T<sup>3</sup> Tea- All About Tea and It's Quali-Teas! </h1>  
 
    <div class="slideshow">
-    <img id= "T" class="slide" src="Images/CT.jpg" alt="Chamomile Tea" title="Chamomile">
-    <img id="T1" class="slide" src="Images/GT.jpg" alt="Green Tea" title="Green">
-    <img id="T2" class= "slide" src="Images/JT.jpg" alt="Jasmine Tea" title="Jasmine">
-    <img id="T3" class="slide" src="Images/OT.jpg" alt="Oolong Tea" title="Oolong "> 
+    <img id= "T" class="slide" src="Images/purpletea.jpg" alt="Tea" title="Tea">
+    <img id="T1" class="slide" src="Images/Spicedtea-18.jpg" alt="Spiced Tea" title="Spiced Tea">
+    <img id="T2" class= "slide" src="Images/flowertea.jpg" alt="Herbal Tea" title="Herbal">
+    <img id="T3" class="slide" src="Images/teatime-tout-2.webp" alt="Green Tea" title="Green Tea "> 
   </div>
   
   <div class="Pg1">
-    <div class="history">History</div>
-    <div class="types">Types of Tea</div>
-    <div class="extra">Extra</div>
+   <div><a href="History.html">History</a></div>
+    <div><a href="History.html">Types of Tea</a></div>
+    <div><a href="More.html">More</a></div>
 </div>
+<script> 
+if (/Mobi/.test(navigator.userAgent)) {
+  // Mobile device detected
+
+  document.querySelector('#myButton').addEventListener('touchstart', function(e) {
+  // Handle button click -- used ChatGBT for help for phone compatibility
+});
+
+}
+</script>
 
 <footer>
         <p> &copy; 2023 T<sup>3</sup> Information Website.</p>
