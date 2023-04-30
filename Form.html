@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,11 +125,83 @@ fieldset {
   });
   
   }
-  </script> 
-      
-      </fieldset>
+
+  const form = document.querySelector('form');
+
+// add a submit event listener to the form
+form.addEventListener('submit', function(event) {
+  // prevent the form from submitting by default
+  event.preventDefault();
+
+  // get the input elements and their values
+  const nameInput = document.querySelector('#name');
+  const nameValue = nameInput.value.trim();
+  const emailInput = document.querySelector('#email');
+  const emailValue = emailInput.value.trim();
+  const teaInput = document.querySelector('#Tea');
+  const teaValue = teaInput.value.trim();
+  const ratingInputs = document.querySelectorAll('[name="rating"]');
+  const commentsInput = document.querySelector('#comments');
+  const commentsValue = commentsInput.value.trim();
+
+  // validate the input values
+  let isValid = true;
+
+  if (nameValue === '') {
+    nameInput.classList.add('invalid');
+    isValid = false;
+  } else {
+    nameInput.classList.remove('invalid');
+  }
+
+  if (emailValue === '') {
+    emailInput.classList.add('invalid');
+    isValid = false;
+  } else {
+    emailInput.classList.remove('invalid');
+  }
+
+  if (teaValue === '') {
+    teaInput.classList.add('invalid');
+    isValid = false;
+  } else {
+    teaInput.classList.remove('invalid');
+  }
+
+  let ratingValue = '';
+  ratingInputs.forEach(function(ratingInput) {
+    if (ratingInput.checked) {
+      ratingValue = ratingInput.value;
+    }
+  });
+
+  if (ratingValue === '') {
+    ratingInputs.forEach(function(ratingInput) {
+      ratingInput.classList.add('invalid');
+    });
+    isValid = false;
+  } else {
+    ratingInputs.forEach(function(ratingInput) {
+      ratingInput.classList.remove('invalid');
+    });
+  }
+
+  if (commentsValue === '') {
+    commentsInput.classList.add('invalid');
+    isValid = false;
+  } else {
+    commentsInput.classList.remove('invalid');
+  }
+
+  // if the form is valid, submit it
+  if (isValid) {
+    form.submit();
+  }
+});
+</script>
+    </fieldset>
     </form>
-      <!--Used old class notes and exercises to get the structure-->
+      <!--Used old class notes, ChatGBT, and exercises to get the structure-->
       
 </body>
 </html>
